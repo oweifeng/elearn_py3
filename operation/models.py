@@ -5,6 +5,7 @@ from django.db import models
 from users.models import UserProfile
 from courses.models import Course
 
+
 class UserAsk(models.Model):
     name = models.CharField(max_length=20, verbose_name="姓名")
     mobile = models.CharField(max_length=11, verbose_name="手机")

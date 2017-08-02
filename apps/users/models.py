@@ -7,7 +7,7 @@ from django.contrib.auth.models import AbstractUser
 class UserProfile(AbstractUser):  # 继承Django自身的AbstractUser,沿用默认字段
     nick_name = models.CharField(max_length=50, verbose_name="昵称", default="")  # 增加昵称字段, 默认为空""
     birthday = models.DateField(verbose_name="生日", null=True, blank=True)  # 增加生日字段, 允许null与空
-    gender = models.CharField(choices=(("Male", "男"), ("female", "女")), max_length=5)  # 增加性别字段, 使用了choices选项
+    gender = models.CharField(choices=(("Male", "男"), ("female", "女")), max_length=6)  # 增加性别字段, 使用了choices选项
     address = models.CharField(max_length=100, default="")  # 增加地址字段
     mobile = models.CharField(max_length=11, null=True, blank=True)  # 增加手机字段
     image = models.ImageField(upload_to="image/%Y/%m", default="image/default.png", max_length=100)  # 增加用户头像字段, image/%Y/%m代表上传时按年月文件夹进行, default设置的是默认头像路径

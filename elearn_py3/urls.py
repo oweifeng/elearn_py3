@@ -18,12 +18,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
 import xadmin
-from users.views import LoginView
+from users.views import LoginView, RegisterView
 
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
 
-    url('^$|^index.html$', TemplateView.as_view(template_name="index.html"), name="index"),  # 正则表达式表示A,B两模式匹配其中之一的, 写成A|B
-    url('^login/$|login.html$', LoginView.as_view(), name="login"),  # 正则表达式表示A,B两模式匹配其中之一的, 写成A|B
+    url('^$', TemplateView.as_view(template_name="index.html"), name="index"),
+    url('^login/$', LoginView.as_view(), name="login"),
+    url('^register/$', RegisterView.as_view(), name="register"),
 ]

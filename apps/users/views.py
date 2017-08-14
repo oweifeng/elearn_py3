@@ -34,4 +34,4 @@ class LoginView(View):
             else:
                 return render(request, "login.html", {"msg": "用户名或密码错误!"})
         else:
-            return render(request, "login.html", {"msg": "用户名或密码输入格式有误!"})  # 如果login_form出错, 则提示输入格式有误
+            return render(request, "login.html", {"login_form":login_form})  # 如果login_form出错, 则返回login_from对象, 在前端进一步处理
